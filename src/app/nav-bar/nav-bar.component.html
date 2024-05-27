@@ -1,0 +1,25 @@
+<div [ngStyle]="{backgroundColor:'var()'}">
+    <div class="flex justify-between items-center px-4 py-2">
+        <!-- Menu Button -->
+        <button class="inline-flex items-center justify-center p-2 rounded-md  focus:outline-none"
+            (click)="clickMenu()">
+            <i class="pi pi-bars" style="font-size: 1.5rem;"></i>
+        </button>
+
+        <!-- App Title -->
+        <span class="text-xl font-semibold">ANGULAR OPEN APP</span>
+
+        <!-- User Account Icon -->
+        <div class="flex items-center">
+            <p-inputSwitch [(ngModel)]="darkMode" class="flex mr-5" (onChange)="toggleDarkMode()" />
+            <!-- Placeholder for user account image or icon -->
+            <i class="pi pi-user" style="font-size: 1.5rem; "></i>
+        </div>
+    </div>
+</div>
+<p-sidebar [(visible)]="sidebarVisible">
+    <h3>Sidebar</h3>
+    <p>
+        sidebar content
+    </p>
+</p-sidebar>
