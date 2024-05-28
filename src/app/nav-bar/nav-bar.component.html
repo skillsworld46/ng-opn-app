@@ -17,62 +17,55 @@
         </div>
     </div>
 </div>
-<!-- <p-sidebar [(visible)]="sidebarVisible">
-    <h3>Sidebar</h3>
-    <p>
-        sidebar content
-    </p>
-</p-sidebar> -->
 
 <p-sidebar #sidebarRef [(visible)]="sidebarVisible">
-    <ng-template pTemplate="header">
-        <div class="flex align-items-center justify-center  w-4/5">
-            <!-- <img alt="logo" src="" style="width: 150px;"> -->
-        </div>
-    </ng-template>
-    <ng-template pTemplate="content">
-        <div class="overflow-y-auto">
-            <ul class="list-none p-0 m-0 overflow-hidden">
-                <li *ngFor="let menu of menuItems; let i = index">
-                    <a pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown"
-                        leaveToClass="hidden" leaveActiveClass="slideup"
-                        class="flex align-items-center cursor-pointer p-3 border-round text-700 menu-item transition-duration-150 transition-colors p-ripple" (click)="navigate(menu.routerLink)">
-                        <i class="{{ menu.icon }}"></i>
-                        <span class="font-medium">{{ menu.label }}</span>
-                        <i *ngIf="menu.subMenus.length > 0" class="pi pi-chevron-down ml-auto"></i>
-                    </a>
-                    <ul
-                        class="py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out">
-                        <li *ngFor="let subMenu of menu.subMenus">
-                            <a pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown"
-                                leaveToClass="hidden" leaveActiveClass="slideup"
-                                class="flex align-items-center cursor-pointer p-3 border-round text-700 menu-item transition-duration-150 transition-colors p-ripple" (click)="navigate(subMenu.routerLink)">
-                                <i class="{{ subMenu.icon }}"></i>
-                                <span class="font-medium">
-                                    {{ subMenu.label }}</span>
-                                <i *ngIf="subMenu.subMenus.length > 0" class="pi pi-chevron-down ml-auto"></i>
-                            </a>
-                            <ul
-                                class="list-none py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out">
-                                <li *ngFor="let subSubMenu of subMenu.subMenus">
-                                    <a pRipple
-                                        class="flex align-items-center cursor-pointer p-3 border-round text-700 transition-duration-150 transition-colors p-ripple"(click)="navigate(subSubMenu.routerLink)">
-                                        <i class="{{ subSubMenu.icon }}"></i>
-                                        <span class="font-medium">
-                                            {{ subSubMenu.label }}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </ng-template>
-    <ng-template pTemplate="footer">
-        <div class="mt-auto">
-            <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
-            <span class="font-bold">ver. 1.0.0</span>
+    <ng-template pTemplate="headless">
+        <div class="m-2 flex flex-column h-full">
+            <div class="items-center flex-row">
+                <img alt="logo" class="m-auto" style="max-width: 40%" src="opn-logo.png">
+            </div>
+            <div class="overflow-y-auto">
+                <ul class="list-none p-0 m-0 overflow-hidden">
+                    <li *ngFor="let menu of menuItems; let i = index">
+                        <a pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown" leaveToClass="hidden"
+                            leaveActiveClass="slideup"
+                            class="flex items-center cursor-pointer p-3 rounded-md text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                            (click)="navigate(menu.routerLink)">
+                            <i class="mr-2 {{ menu.icon }}"></i>
+                            <span class="font-medium">{{ menu.label }}</span>
+                            <i *ngIf="menu.subMenus.length > 0" class="pi pi-chevron-down ml-auto"></i>
+                        </a>
+                        <ul class="py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out">
+                            <li *ngFor="let subMenu of menu.subMenus">
+                                <a pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown" leaveToClass="hidden"
+                                    leaveActiveClass="slideup"
+                                    class="flex items-center cursor-pointer p-3 rounded-md text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                                    (click)="navigate(subMenu.routerLink)">
+                                    <i class="mr-2 {{ subMenu.icon }}"></i>
+                                    <span class="font-medium">
+                                        {{ subMenu.label }}</span>
+                                    <i *ngIf="subMenu.subMenus.length > 0" class="pi pi-chevron-down ml-auto"></i>
+                                </a>
+                                <ul
+                                    class="list-none py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out">
+                                    <li *ngFor="let subSubMenu of subMenu.subMenus">
+                                        <a pRipple
+                                            class="flex items-center cursor-pointer p-3 rounded-md text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                                            (click)="navigate(subSubMenu.routerLink)">
+                                            <i class="mr-2 {{ subSubMenu.icon }}"></i>
+                                            <span class="font-medium">
+                                                {{ subSubMenu.label }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-auto m-1">
+                <span class="font-bold">ver. 1.0.0</span>
+            </div>
         </div>
     </ng-template>
 </p-sidebar>

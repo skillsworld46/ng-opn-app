@@ -6,6 +6,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { SidebarModule } from 'primeng/sidebar';
 import { MENU_ITEMS } from '../app.constant';
 import { ThemeService } from '../theme.service';
+import { RippleModule } from 'primeng/ripple';
+import { StyleClassModule } from 'primeng/styleclass';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,6 +17,8 @@ import { ThemeService } from '../theme.service';
     InputSwitchModule,
     FormsModule,
     CommonModule,
+    RippleModule,
+    StyleClassModule,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
@@ -32,10 +36,10 @@ export class NavBarComponent {
   }
 
   navigate(route: string) {
-      if (route) {
-          this.router.navigate([route]);
-          this.sidebarVisible = false;
-      }
+    if (route) {
+      this.router.navigate([route]);
+      this.sidebarVisible = false;
+    }
   }
 
   clickMenu() {
