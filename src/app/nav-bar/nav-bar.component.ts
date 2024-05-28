@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SidebarModule } from 'primeng/sidebar';
-import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { SidebarModule } from 'primeng/sidebar';
+import { MENU_ITEMS } from '../app.constant';
 import { ThemeService } from '../theme.service';
 
 @Component({
@@ -20,11 +22,20 @@ import { ThemeService } from '../theme.service';
 export class NavBarComponent {
   sidebarVisible: boolean = false;
   darkMode: boolean = false;
+  menuItems;
 
   constructor(
     private themeService: ThemeService,
+    private router: Router,
   ) {
+    this.menuItems = MENU_ITEMS;
+  }
 
+  navigate(route: string) {
+      if (route) {
+          this.router.navigate([route]);
+          this.sidebarVisible = false;
+      }
   }
 
   clickMenu() {
