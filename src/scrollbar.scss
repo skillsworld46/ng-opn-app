@@ -1,0 +1,25 @@
+/* This will style the main scrollbar for the page */
+html {
+    scrollbar-width: thin;
+    /* thumb and track color */
+}
+
+/* Styling for Webkit-based browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    /* color of the scroll thumb */
+    border-radius: 4px;
+    /* roundness of the scroll thumb */
+    border: 2px solid #f0f0f0;
+    /* creates padding around scroll thumb */
+}
