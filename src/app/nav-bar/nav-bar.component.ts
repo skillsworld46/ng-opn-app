@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
+import { StyleClassModule } from 'primeng/styleclass';
 import { MENU_ITEMS } from '../app.constant';
 import { ThemeService } from '../theme.service';
-import { RippleModule } from 'primeng/ripple';
-import { StyleClassModule } from 'primeng/styleclass';
 
 @Component({
   selector: 'app-nav-bar',
@@ -28,10 +28,7 @@ export class NavBarComponent {
   darkMode: boolean = false;
   menuItems;
 
-  constructor(
-    private themeService: ThemeService,
-    private router: Router,
-  ) {
+  constructor(private themeService: ThemeService, private router: Router) {
     this.menuItems = MENU_ITEMS;
   }
 

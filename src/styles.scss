@@ -1,8 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import "primeicons/primeicons.css";
 @import "primeng/resources/primeng.css";
 @import "primeflex/primeflex.css";
 
 @import "scrollbar.scss";
+
+/* show pointer when hover */
+.hover-pointer:hover {
+    cursor: pointer;
+}
