@@ -34,12 +34,12 @@
             "styles": [
               "src/styles.scss",
               {
-                "input": "src/theme-scss/lara-dark-blue-theme.scss",
+                "input": "src/theme-scss/dark-blue-theme.scss",
                 "bundleName": "dark-blue",
                 "inject": false
               },
               {
-                "input": "src/theme-scss/lara-light-blue-theme.scss",
+                "input": "src/theme-scss/light-blue-theme.scss",
                 "bundleName": "light-blue",
                 "inject": false
               }
