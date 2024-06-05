@@ -1,22 +1,31 @@
-<div [ngStyle]="{ backgroundColor: 'var()' }">
+<div
+class="fixed z-1 surface-section border-round-lg shadow-5 "
+style="width: 99%"
+>
   <div class="flex justify-between align-items-center px-4 py-2">
     <!-- Menu Button -->
     <div
-      class="inline-flex align-items-center hover-pointer p-2 rounded-md"
+      class="inline-flex align-items-center cursor-pointer p-2 border-circle"
       (click)="clickMenu()"
     >
-      <i class="pi pi-bars" style="font-size: 1.5rem"></i>
+      <i class="pi pi-bars text-2xl"></i>
     </div>
 
     <!-- App Title -->
-    <span class="text-xl font-semibold ml-auto mr-auto">ANGULAR OPEN APP</span>
+    <span class="text-2xl font-semibold ml-auto mr-auto">ANGULAR OPEN APP</span>
 
     <!-- User Account Icon -->
     <div class="flex align-items-center">
-      <p-button [icon]="darkModeIcon" 
-      class="flex mr-5" [rounded]="true" [text]="true" (onClick)="toggleDarkMode()"/>
+      <p-button
+        [icon]="darkModeIcon"
+        class="flex mr-3"
+        size="large"
+        [rounded]="true"
+        [text]="true"
+        (onClick)="toggleDarkMode()"
+      />
       <!-- Placeholder for user account image or icon -->
-      <i class="pi pi-user" style="font-size: 1.5rem"></i>
+      <i class="pi pi-user text-xl"></i>
     </div>
   </div>
 </div>
