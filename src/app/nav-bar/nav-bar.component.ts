@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { InputSwitchModule } from 'primeng/inputswitch';
+import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
 import { StyleClassModule } from 'primeng/styleclass';
@@ -14,11 +14,11 @@ import { ThemeService } from '../theme.service';
   standalone: true,
   imports: [
     SidebarModule,
-    InputSwitchModule,
     FormsModule,
     CommonModule,
     RippleModule,
     StyleClassModule,
+    ButtonModule,
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
@@ -26,6 +26,7 @@ import { ThemeService } from '../theme.service';
 export class NavBarComponent {
   sidebarVisible: boolean = false;
   darkMode: boolean = false;
+  darkModeIcon: string = 'pi pi-moon';
   menuItems;
 
   constructor(private themeService: ThemeService, private router: Router) {
@@ -48,10 +49,14 @@ export class NavBarComponent {
   }
 
   toggleDarkMode() {
-    if (this.darkMode) {
+    if (!this.darkMode) {
+      this.darkMode = true;
       this.themeService.switchTheme('dark-blue');
+      this.darkModeIcon = 'pi pi-sun';
     } else {
+      this.darkMode = false;
       this.themeService.switchTheme('light-blue');
+      this.darkModeIcon = 'pi pi-moon';
     }
   }
 }

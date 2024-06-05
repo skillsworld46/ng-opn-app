@@ -13,11 +13,8 @@
 
     <!-- User Account Icon -->
     <div class="flex align-items-center">
-      <p-inputSwitch
-        [(ngModel)]="darkMode"
-        class="flex mr-5"
-        (onChange)="toggleDarkMode()"
-      />
+      <p-button [icon]="darkModeIcon" 
+      class="flex mr-5" [rounded]="true" [text]="true" (onClick)="toggleDarkMode()"/>
       <!-- Placeholder for user account image or icon -->
       <i class="pi pi-user" style="font-size: 1.5rem"></i>
     </div>
