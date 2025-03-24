@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
-import { SidebarModule } from 'primeng/sidebar';
 import { StyleClassModule } from 'primeng/styleclass';
 import { MENU_ITEMS } from '../app.constant';
 import { DrawerModule } from 'primeng/drawer';
@@ -47,17 +46,6 @@ export class NavBarComponent {
     }
   }
 
-    //   toggleDarkMode() {
-    //     if (!this.darkMode) {
-    //       this.darkMode = true;
-    //       this.themeService.switchTheme('dark-blue');
-    //       this.darkModeIcon = 'pi pi-sun';
-    //     } else {
-    //       this.darkMode = false;
-    //       this.themeService.switchTheme('light-blue');
-    //       this.darkModeIcon = 'pi pi-moon';
-    //     }
-    //   }
   toggleDarkMode() {
       const element = document.querySelector('html');
       element?.classList.toggle('my-app-dark');

@@ -43,10 +43,10 @@ style="width: 99%"
             pRipple
             pStyleClass="@next"
             enterFromClass="hidden"
-            enterActiveClass="animate-slidedown"
+            enterActiveClass="slidedown"
             leaveToClass="hidden"
-            leaveActiveClass="animate-slideup"
-            class="flex items-center cursor-pointer p-3 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple"
+            leaveActiveClass="slideup"
+            class="flex align-items-center cursor-pointer p-3 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
               (click)="navigate(menu.routerLink)"
             >
               <i class="mr-2 {{ menu.icon }}"></i>
@@ -57,17 +57,17 @@ style="width: 99%"
               ></i>
             </a>
             <ul
-              class="list-none py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-ease-in-out"
+              class="list-none py-0 pl-4 pr-0 m-0 hidden overflow-y-hidden duration-3000 animate-ease-in-out"
             >
               <li *ngFor="let subMenu of menu.subMenus">
                 <a
                 pRipple
                 pStyleClass="@next"
                 enterFromClass="hidden"
-                enterActiveClass="animate-slidedown"
+                enterActiveClass="slidedown"
                 leaveToClass="hidden"
-                leaveActiveClass="animate-slideup"
-                class="flex items-center cursor-pointer p-3 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple"
+                leaveActiveClass="slideup"
+                class="flex align-items-center cursor-pointer p-3 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
                   (click)="navigate(subMenu.routerLink)"
                 >
                   <i class="mr-2 {{ subMenu.icon }}"></i>
@@ -78,12 +78,12 @@ style="width: 99%"
                   ></i>
                 </a>
                 <ul
-                  class="list-none py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all duration-[400ms] ease-in-out"
+                  class="list-none py-0 pl-4 pr-0 m-0 hidden overflow-y-hidden transition-all duration-400 ease-in-out"
                 >
                   <li *ngFor="let subSubMenu of subMenu.subMenus">
                     <a
                       pRipple
-                      class="flex align-items-center cursor-pointer p-3 rounded-md text-700 hover:surface-100 duration-150 transition-colors p-ripple"
+                      class="flex align-items-center cursor-pointer p-3 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
                       (click)="navigate(subSubMenu.routerLink)"
                     >
                       <i class="mr-2 {{ subSubMenu.icon }}"></i>

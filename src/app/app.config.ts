@@ -19,10 +19,12 @@ export const appConfig: ApplicationConfig = {
                     darkModeSelector: '.my-app-dark',
                     cssLayer: {
                         name: 'primeng',
-                        order: 'app-styles, primeng'
+                        order: 'tailwind-base, primeng, tailwind-utilities'
                     }
                 }
-            },
-            ripple: true
+            }, 
+            csp: {
+                nonce: '...'
+            }
         }), provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(),]
 };
