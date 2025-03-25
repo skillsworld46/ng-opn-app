@@ -3,8 +3,28 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+
+import Theme from '@primeng/themes/aura'
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideAnimations(), provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(),]
+    providers: [
+        provideAnimationsAsync(),
+        providePrimeNG({
+            theme: {
+                preset: Theme,
+                options: {
+                    prefix: 'p',
+                    darkModeSelector: '.my-app-dark',
+                    cssLayer: {
+                        name: 'primeng',
+                        order: 'tailwind-base, primeng, tailwind-utilities'
+                    }
+                }
+            }, 
+            csp: {
+                nonce: '...'
+            }
+        }), provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(),]
 };
