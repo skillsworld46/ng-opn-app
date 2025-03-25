@@ -7,7 +7,7 @@ export interface Menu extends MenuItem {
 
 export const MENU_ITEMS: Menu[] = [
     { label: 'Dashboard', icon: 'pi pi-chart-bar', routerLink: null, subMenus: [], },
-    { label: 'Bookmarks', icon: 'pi pi-bookmark', routerLink: null, subMenus: [], },
+    { label: 'Bookmarks', icon: 'pi pi-bookmark', routerLink: 'bookmark', subMenus: [], },
     {
         label: 'Reports', icon: 'pi pi-chart-line', routerLink: null, subMenus: [
             {
